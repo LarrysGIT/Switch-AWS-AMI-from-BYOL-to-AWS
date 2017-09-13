@@ -51,7 +51,7 @@ Ec2WindowsActivate: Ec2WindowsActivate plugin has skipped activation since insta
 
 * Do anything you want and use ec2config or ec2launch to sysprep and shutdown the server, create an AMI, the AMI will be AWS license managed and  all customnized OS settings kept.
 
-* Tip: if ec2launch or ec2config or SSMAgent doesn't start, please check routing by `route print` to `169.254.169.xxx`, make sure it's correct, AWS services are heavily relay on these dynamically configured link-local addresses.
+* Tip: if ec2launch or ec2config or SSMAgent doesn't start, please check routing to `169.254.169.xxx` by `route print`, make sure it's correct, AWS services are heavily relay on these dynamically configured link-local addresses.
 
 -- Larry.Song@outlook.com
 
