@@ -7,11 +7,11 @@
 
 ## aws ec2 import-image --license-type [BYOL|AWS]
 
-* This is the cli import your image to an AWS AMI.
+* Above is the cli import your image to an AWS AMI.
 
 * If you not sure your AMI is BYOL or AWS, there still some ways to determine,
 
-* * When you using `aws ec2 import-image` cli, there is a parameter called `--license-type`, it's `BYOL` by default. Unfortunately, there is no further way to see the property again.
+* * When you using `aws ec2 import-image` cli, there is a parameter called `--license-type`, it's `BYOL` by default. Unfortunately, there is no further way to see or change the property again.
 
 * * Launch a 2012 instance, see if the instance is activated by AWS KMS `169.254.169.250:1688` or `169.254.169.251:1688`, if yes, your AMI is AWS managed license, to double confirm, you can run `slmgr /rearm` to clear activation status and reboot see if the instance is activated again. This by default is a automatic behivor controlled by `ec2config` service, you can see its logs in `C:\Program Files\Amazon\Ec2ConfigService\Logs\Ec2ConfigLog.log` to know how it works. Below is a peice of logs shows this instance is launched from a BYOL AMI, so ec2config didn't activate it.
 
