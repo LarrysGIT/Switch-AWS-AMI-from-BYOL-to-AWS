@@ -33,17 +33,13 @@ Ec2WindowsActivate: Ec2WindowsActivate plugin has skipped activation since insta
 
 * Do nothing and shutdown `i-BYOL`
 
-* Go to volume page, find the volume of `i-BYOL` and create a snapshot, refer as `snapshot-BYOL`
+* Go to volume page, find the volume of `i-BYOL` and detach, refer as `vol-BYOL`
 
 * Now you can terminate `i-BYOL` and delete it related resources at anytime
 
 * Go to instance page, launch a new instance from AWS base AMI, refer as `i-AWS`, no need to wait it, just stop it immediately
 
 * Go to volume page, find the volume of `i-AWS`, detach and delete
-
-* Go to snapshot page, find `snapshot-BYOL`, create a new volume from it (note the availibility zone a,b,c,d should be the same to `i-AWS`), refer as `vol-BYOL`
-
-* Now you can delete `snapshot-BYOL` at anytime
 
 * Go to volume page, attach `vol-BYOL` to `i-AWS` at mountpoint `/dev/sda1`
 
